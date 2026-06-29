@@ -23,6 +23,24 @@ Dựng trang theo PAGE RECIPE → self-verify bằng Playwright (chụp site so 
 1. **Prompt dựng** — build trang theo recipe + tự verify.
 2. **Prompt sửa theo diff** — lặp lại đến khi khớp tolerance ("sửa các điểm lệch sau: …").
 
+## Sửa lỗi theo section (KHÔNG chạy lại cả page)
+
+> Claude gần như không dựng đúng cả trang trong 1 lần — đó là bình thường. Vá theo **section**, đừng dựng lại trang.
+
+- **Vì sao không chạy lại cả page:** vứt phần đã đúng + đốt lại Figma call + dễ làm hỏng section đang đúng (regression).
+  Bước self-verify đã cho bạn **danh sách lệch theo từng section** → đó chính là danh sách việc cần sửa.
+- **Context còn sống → nói tiếp, không chạy lại.** Cùng session, agent vẫn nhớ JSX vừa viết. Chỉ cần **pin scope**:
+  *"Header/Hero ổn. Riêng Features: card 2 cột, Figma là 3 cột, gap hẹp hơn. CHỈ sửa Features, đừng đụng phần còn lại."*
+- **Sửa Ở ĐÂU tuỳ tầng lỗi** (nhầm tầng là lỗi đắt nhất):
+  - sai **shared component** (Button/Card/Header) → sửa 1 lần ở `components/`, fix mọi nơi — đừng vá trong từng trang.
+  - sai **section riêng của trang** → sửa thẳng trong file trang.
+  - sai **token** (màu/spacing/font) → sửa token trong `globals.css`, lan toả.
+- **Có trần:** quá **2–3 vòng** vẫn chưa khớp → DỪNG & HỎI (Hard Rule "leo thang"). Thường là token sai / thiết kế mơ hồ
+  cần quyết định của bạn — đừng để vá vô tận.
+- **Componentize tốt = iterate rẻ.** Vá theo section chỉ dễ khi markup đã chia section/component rõ. E trả "học phí"
+  sửa lỗi **một lần** để khoá khuôn → F lệch ít hẳn. Nếu sau này trang nào ở F cũng lệch nhiều → tín hiệu khuôn / shared
+  component chưa chặt, quay lại sửa tầng dùng chung thay vì vá từng trang.
+
 ## Điểm REVIEW trước khi qua F
 - [ ] Khớp desktop trong ngưỡng `<TOLERANCE_PX>`px.
 - [ ] Reflow đúng ở tablet/mobile.

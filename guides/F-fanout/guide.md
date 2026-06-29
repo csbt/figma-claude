@@ -13,6 +13,9 @@
 - Chia trang thành batch (~5–7 trang/batch). Sau mỗi batch: chạy prompt dọn dedup, review nhanh, commit.
 - Nếu phát sinh nhu cầu **component dùng chung mới** → dừng, thêm ở trung tâm (như D), rồi tiếp — đừng để
   mỗi agent tự đẻ trong worktree.
+- Trang nào trả về bị lệch → **vá theo section trong session chính**, KHÔNG re-spawn subagent (subagent đã đóng
+  context). Cách vá: xem *"Sửa lỗi theo section"* ở `guides/E-golden-page/guide.md`. Lệch nặng/sai cấu trúc → kéo
+  riêng trang đó ra làm lại bằng `/build-one-page`.
 
 ## Việc giao CLAUDE
 Mỗi batch: spawn subagent trong git worktree riêng, mỗi agent 1 trang theo PAGE RECIPE; gộp worktree;
