@@ -31,6 +31,7 @@
 | Styling | Tailwind + CSS variables (token) |
 | Icon | lucide-react (icon đặc thù mới export từ Figma) |
 | Font / Ảnh | next/font (tự host) · next/image |
+| i18n | next-intl · vi (mặc định) · en |
 | Whitelist thư viện | Next, Tailwind, lucide-react. **Cài thêm gì phải hỏi.** |
 
 ---
