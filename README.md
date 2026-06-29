@@ -65,8 +65,30 @@ cd my-site
 
 ### Bước 3 — Pre-flight (việc của bạn, làm tay)
 1. `CLAUDE.md`: điền `<PROJECT_NAME>`, `<DESIGN_WIDTH>`, `<TOLERANCE_PX>`, `<FIGMA_FILE_URL>`, version.
-2. `PROJECT.md`: dán **bảng Trang** (slug + route + Figma node URL), điền **Quyết định scope** sau buổi họp.
+2. `PROJECT.md`: điền **PHẦN 1 — Hồ sơ** (chi tiết ở mục "Chỉnh PROJECT.md" ngay dưới).
 3. Mở Figma **desktop**; cài/kiểm Figma MCP + Playwright MCP.
+
+#### Chỉnh PROJECT.md — giữ gì / sửa gì / xoá gì
+
+`PROJECT.md` chia **2 phần**: PHẦN 1 bạn điền, PHẦN 2 để Claude tự cập nhật. Quy ước ký hiệu trong file:
+
+| Ký hiệu | Nghĩa | Bạn làm gì |
+|---|---|---|
+| `<...>` (ngoặc nhọn) | chỗ giữ chỗ | **THAY** bằng giá trị thật, xoá ngoặc |
+| `<!-- ... -->` | ghi chú hướng dẫn (ẩn khi render) | đọc để biết cách điền → **xoá được** sau khi xong |
+| dòng ví dụ (home/about/pricing…) | minh hoạ | **THAY** bằng trang thật, **xoá** dòng thừa |
+
+**PHẦN 1 — bạn điền 1 lần:**
+- `# <PROJECT_NAME>` → tên dự án · `<FIGMA_FILE_URL>` → link file Figma.
+- **Trang** → mỗi trang 1 dòng: slug · route · link node `[↗ slug](url)` · để Trạng thái = `Chưa làm`.
+- **Frame nguồn token** → 2–4 link frame phủ nhiều kiểu (home / nội dung nhiều chữ / form).
+- **Trang nhiều trạng thái** → chỉ giữ nếu có tab/step; không có thì **xoá cả mục**.
+- **Quyết định scope** → điền sau buổi họp (mỗi `____`).
+- **Cần hỏi** → để trống lúc đầu.
+
+**PHẦN 2 — KHÔNG đụng tay:** "Tiến độ giai đoạn" + cột "Trạng thái" ở bảng Trang do Claude cập nhật mỗi session.
+
+> **Tóm tắt:** GIỮ heading + bảng + checklist · SỬA mọi `<...>` và dòng ví dụ · XOÁ các `<!-- -->` (và mục "nhiều trạng thái" nếu không dùng).
 
 ### Bước 4 — Chạy lần lượt A → J (mỗi giai đoạn 1 session mới)
 Với mỗi folder theo thứ tự:

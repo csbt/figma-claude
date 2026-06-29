@@ -9,7 +9,7 @@
 
 ## Điều kiện vào
 - Giai đoạn A xong: project chạy, `@theme` rỗng đã có, Figma MCP OK.
-- `PROJECT.md` đã có node URL "Frame đại diện" (header/footer/card/hero…).
+- `PROJECT.md` đã có **Frame nguồn token** (2–4 frame phủ nhiều kiểu: home/nội dung/form).
 
 ## Việc của BẠN — đây là CỔNG REVIEW (đừng giao máy)
 - Duyệt **bằng mắt** scale Claude đề xuất: màu có gom đúng không, thiếu/thừa token, font đúng chưa.
@@ -17,7 +17,7 @@
 - Token sai ở đây = sai cả site → review kỹ.
 
 ## Việc giao CLAUDE
-Đọc frame đại diện → trích giá trị thật → gom thành scale → ghi `@theme` → liệt kê giá trị lẻ vào `PROJECT.md`.
+Đọc 2–4 frame nguồn token → trích giá trị thật → gom thành scale → ghi `@theme` → liệt kê giá trị lẻ vào `PROJECT.md`.
 
 ## Mô hình prompt (review-gated)
 1. **Prompt 1** — trích + đề xuất scale + ghi `@theme` + liệt kê "cần quyết".

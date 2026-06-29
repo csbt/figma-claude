@@ -7,7 +7,7 @@ Mục tiêu: implement đầy đủ component dùng chung + layout gốc, dùng 
 - Xem token trong `globals.css @theme` để dùng đúng.
 
 ## Bước 2 — Primitives (`components/ui`)
-- Implement từng stub: Button, Card, Container, Section, Badge, Input… theo Figma (frame đại diện).
+- Implement từng stub: Button, Card, Container, Section, Badge, Input… theo Figma — mở frame TRANG có chứa component đó (node URL trang trong PROJECT.md), không bịa diện mạo.
 - **Variant = prop**, không tạo component mới. Ví dụ Button:
   ```tsx
   const styles = {

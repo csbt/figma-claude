@@ -5,8 +5,7 @@
 
 # <PROJECT_NAME> — Hướng dẫn dự án (Figma → Code)
 
-- **Khách hàng:** <CLIENT> · **Deadline:** <DEADLINE>
-- **Figma:** <FIGMA_FILE_URL> — bản gốc chỉ có **desktop** (rộng <DESIGN_WIDTH>px) → desktop là SPEC.
+- **Figma:** [mở file](<FIGMA_FILE_URL>) — bản gốc chỉ có **desktop** (rộng <DESIGN_WIDTH>px) → desktop là SPEC.
   Mobile/tablet là layout dev tự thiết kế theo *Reflow Rules* (mục 4). Trạng thái &
   quyết định scope: xem `PROJECT.md`.
 

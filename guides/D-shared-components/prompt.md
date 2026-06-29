@@ -6,7 +6,7 @@
 ```
 Đọc CLAUDE.md + PROJECT.md và guides/D-shared-components/instructions.md, rồi thực thi.
 Implement đầy đủ các stub trong components/ui + components/layout (đọc barrel index.ts để biết danh sách).
-- Lấy diện mạo từ Figma (node URL frame đại diện trong PROJECT.md).
+- Lấy diện mạo từ Figma: với mỗi component, mở frame TRANG nào có chứa nó (node URL các trang trong PROJECT.md).
 - Biến thể = prop/variant; KHAI BÁO SẴN mọi variant thấy trên các trang để fan-out khỏi sửa lại.
 - Chỉ dùng token trong globals.css @theme, không hardcode.
 - Dựng app/layout.tsx: next/font, metadata gốc + OG default, bọc Header/Footer.

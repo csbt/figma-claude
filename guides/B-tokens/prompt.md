@@ -5,7 +5,7 @@
 ## Prompt 1 — Trích & đề xuất token
 ```
 Đọc CLAUDE.md + PROJECT.md và guides/B-tokens/instructions.md, rồi thực thi.
-Frame đại diện: lấy node URL ở mục "Frame đại diện" trong PROJECT.md.
+Frame nguồn token: lấy các node URL ở mục "Frame nguồn token" trong PROJECT.md (2–4 frame phủ nhiều kiểu: home/nội dung/form).
 Mục tiêu: trích token từ Figma, gom thành scale nhất quán, ghi vào src/app/globals.css trong khối @theme
 (Tailwind v4 — KHÔNG tạo tailwind.config.ts cho token).
 Liệt kê mọi "giá trị lẻ cần quyết" vào mục "Cần hỏi" của PROJECT.md.

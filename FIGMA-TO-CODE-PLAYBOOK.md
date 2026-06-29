@@ -47,7 +47,7 @@
 
 ### 1.3 Chuẩn bị kỹ thuật
 - [ ] Mở Figma **desktop app** (MCP cần app chạy để đọc node).
-- [ ] Thu thập **node URL chính xác** của từng trang + frame component đại diện.
+- [ ] Thu thập **node URL chính xác** của từng trang + **2–4 frame nguồn token** (phủ nhiều kiểu: home/nội dung/form).
 - [ ] Cài & test Figma MCP (`get_metadata`, `get_screenshot`, `get_design_context`).
 
 ---
@@ -96,7 +96,7 @@ Nguồn chân lý khác (KHÔNG phải file markdown riêng):
 | # | Giai đoạn | Việc giao Claude | Output | Exit criteria (xong khi…) |
 |---|---|---|---|---|
 | A | **Setup** | Init project, viết CLAUDE.md + PROJECT.md, settings.json (allowlist + hook format), git init, pin version | Project chạy + CLAUDE.md + PROJECT.md | `pnpm dev` chạy, commit đầu tiên |
-| B | **Design tokens** | Đọc frame đại diện, trích & gom màu/typo/spacing/radius/shadow thành scale | globals.css (@theme, Tailwind v4) | **Người duyệt token bằng mắt** |
+| B | **Design tokens** | Đọc 2–4 frame nguồn token, trích & gom màu/typo/spacing/radius/shadow thành scale | globals.css (@theme, Tailwind v4) | **Người duyệt token bằng mắt** |
 | C | **Component inventory** | Screenshot các trang, cluster theo HÌNH DẠNG (bỏ qua tên Figma), đặt tên chuẩn, tạo stub + barrel | `components/**/index.ts` (danh mục component) | **Người chốt tên & gộp trùng** |
 | D | **Shared layout + primitives** | Build Header/Footer/Nav/Button/Card/Container/Section (+ index.ts), layout.tsx, font, metadata gốc | components/ui, components/layout | Render thử ổn ở trang demo |
 | E | **Golden page** | 1 trang end-to-end: match desktop, tự dựng responsive, SEO metadata | 1 trang + "page recipe" thêm vào CLAUDE.md | **Người review cực kỹ — khoá khuôn** |
