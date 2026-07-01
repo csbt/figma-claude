@@ -2,7 +2,8 @@
 
 > **Mục tiêu:** implement đầy đủ các component DÙNG CHUNG (từ stub ở C) + layout gốc, để fan-out
 > chỉ việc import.
-> **Output:** `components/ui` + `components/layout` hoàn chỉnh (+ barrel), `app/layout.tsx` (font, metadata gốc, Header/Footer).
+> **Output:** `components/ui` + `components/layout` hoàn chỉnh (+ barrel), `app/layout.tsx` (font, metadata gốc, Header/Footer),
+> **`components/CATALOG.md`** (bảng tra cứu component cho E/F — bắt buộc).
 > **Thời lượng:** ~1.5–2 giờ · **Session:** 1 (có thể tách primitives / layout thành 2 prompt nếu nhiều).
 
 ---
@@ -26,6 +27,7 @@ tất cả dùng token từ `@theme`, export qua barrel.
 - [ ] Header → mobile thành hamburger/drawer (theo Reflow Rules).
 - [ ] `layout.tsx` nạp font bằng `next/font`, có metadata gốc + OG default.
 - [ ] Tất cả dùng token, không hardcode; render thử ổn ở 1 trang demo tạm.
+- [ ] **`components/CATALOG.md` tồn tại**, variant/props đúng với code thực tế, Header/Footer ghi rõ "đã mount trong layout.tsx".
 
 ## Cạm bẫy (mục 10 playbook)
 - **#9** tự cài UI kit ngoài whitelist · **#4** hardcode · biến thể đẻ thành component mới thay vì prop.

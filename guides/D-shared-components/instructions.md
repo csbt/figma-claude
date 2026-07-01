@@ -34,6 +34,14 @@ Mục tiêu: implement đầy đủ component dùng chung + layout gốc, dùng 
 - Tạo route demo tạm (vd `app/_demo/page.tsx`) render các primitive + layout để mắt thường kiểm.
 - `pnpm dev` không lỗi → xoá route tạm.
 
+## Bước 6 — Sinh Component Catalog
+- Copy template `guides/D-shared-components/CATALOG.md` → tạo `components/CATALOG.md`.
+- Điền **tên component, import path, variant/props thực tế** vừa implement — không bịa, không bỏ sót variant.
+- Cột "Dùng khi": 3–6 từ khoá đủ để map từ ý đồ Figma → component đúng.
+- Header/Footer: ghi rõ "Đã mount trong `app/layout.tsx`" để E/F không import lại.
+- Xoá section "Hướng dẫn điền" trong template trước khi commit.
+- **Đây là nguồn sự thật cho E/F** — sai ở đây dẫn tới dùng sai component hoặc tạo trùng.
+
 ## Self-check trước khi báo xong
 - [ ] Mọi stub đã implement; barrel export đúng.
 - [ ] Primitive khai báo đủ variant (prop), không có component trùng nghĩa.

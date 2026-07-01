@@ -6,6 +6,7 @@
 ## Prompt 0 — Lập kế hoạch (Plan mode)
 ```
 Đọc CLAUDE.md + PROJECT.md và guides/E-golden-page/instructions.md. CHƯA sửa file.
+Đọc components/CATALOG.md để biết component sẵn có, variant, và cái nào đã mount trong layout.tsx.
 Trang golden: <slug> (node URL trong PROJECT.md).
 Đề xuất kế hoạch: cấu trúc trang theo section, component nào tái dùng / cần tạo mới (variant?),
 cách dựng layout (chỗ nào auto-layout/không auto-layout), điểm rủi ro. Chờ tôi duyệt rồi mới build.
@@ -14,8 +15,9 @@ cách dựng layout (chỗ nào auto-layout/không auto-layout), điểm rủi r
 ## Prompt dựng
 ```
 Đọc CLAUDE.md + PROJECT.md và guides/E-golden-page/instructions.md, rồi thực thi.
+Đọc components/CATALOG.md — dùng đúng tên component và variant trong đó, không tự bịa component mới.
 Build trang GOLDEN: <slug> (node URL trong PROJECT.md) theo đúng PAGE RECIPE trong CLAUDE.md.
-Tái dùng component trong components/ (đọc barrel index.ts), chỉ dùng token @theme.
+Chỉ dùng token @theme.
 Sau khi dựng, dùng Playwright MCP chụp trang đang chạy ở desktop và so với screenshot Figma;
 liệt kê điểm lệch và tự sửa. Báo cáo các điểm còn lệch để tôi xem.
 ```

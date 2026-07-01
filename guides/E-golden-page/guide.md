@@ -23,6 +23,39 @@ Dựng trang theo PAGE RECIPE → self-verify bằng Playwright (chụp site so 
 1. **Prompt dựng** — build trang theo recipe + tự verify.
 2. **Prompt sửa theo diff** — lặp lại đến khi khớp tolerance ("sửa các điểm lệch sau: …").
 
+## Component page-specific — tách ở đâu, yêu cầu thế nào
+
+> Section phức tạp nhưng **chỉ 1 trang dùng** → đừng đưa vào `components/`, dùng thư mục co-located.
+
+**Quy tắc 2 tầng:**
+
+| Điều kiện | Lưu ở đâu |
+|---|---|
+| Chỉ trang này dùng | `app/(pages)/<slug>/_components/TênSection.tsx` |
+| ≥ 2 trang dùng | `components/ui/` hoặc `components/features/` |
+
+`_components/` (dấu gạch dưới) là convention Next.js — thư mục này bị exclude khỏi router tự động.
+
+**Ngưỡng nên tách:** JSX > 60 dòng **hoặc** section có local state riêng.
+
+**Yêu cầu Claude tách tại Prompt 0 (Plan mode):**
+```
+Với mỗi section có JSX > 60 dòng hoặc có local state riêng, đề xuất tách thành
+component riêng tại app/(pages)/<slug>/_components/. Chỉ đưa vào components/
+nếu section đó tái dùng ≥ 2 trang.
+```
+
+**Yêu cầu tách khi đang sửa diff:**
+```
+Section <TênSection> quá lớn / có state riêng. Tách thành
+app/(pages)/<slug>/_components/<TênSection>.tsx.
+KHÔNG tạo file mới trong components/ vì chỉ trang này dùng.
+```
+
+**Promote lên shared:** Khi trang thứ 2 cần dùng cùng component → di chuyển vào `components/` và cập nhật barrel.
+
+---
+
 ## Sửa lỗi theo section (KHÔNG chạy lại cả page)
 
 > Claude gần như không dựng đúng cả trang trong 1 lần — đó là bình thường. Vá theo **section**, đừng dựng lại trang.
